@@ -1,7 +1,12 @@
+import Translucent from "./Translucent"
+
 const Plugin = {
-    install(Vue){}
+    install(Vue){
+        Vue.use(Translucent);
+    }
 };
 
 export {
     Plugin,
+    Translucent,
 }
