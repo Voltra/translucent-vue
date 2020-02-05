@@ -1,0 +1,12 @@
+{
+  "name": "translucent-vue",
+  "version": "1.0.0",
+  "description": "A Vue binding for translucent",
+  "main": "index.js",
+  "repository": "git@github.com:Voltra/translucent-vue.git",
+  "author": "Voltra <ludwig.guerin.98@gmx.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "translucent": "^1.0.12"
+  }
+}

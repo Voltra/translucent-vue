@@ -1,0 +1,22 @@
+# Yarn/NPM
+node_modules/
+.npm/
+.yarn-integrity
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+
+# Protected files
+tmp/
+temp/
+.env
+.env.test
+
+
+# IDEs
+.idea/
+.vscode/
+.brackets.json
