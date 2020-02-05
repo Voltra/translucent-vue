@@ -8,7 +8,8 @@
   "author": "Voltra <ludwig.guerin.98@gmx.fr>",
   "license": "MIT",
   "dependencies": {
-    "translucent": "^1.0.12"
+    "translucent": "^1.0.12",
+    "vue-types": "^1.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
