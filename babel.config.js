@@ -1,6 +1,9 @@
-const _ = require("dotenv").config();
+const { error } = require("dotenv").config();
 const mode = process.env.NODE_ENV || "production";
 const dev = mode === "development";
+
+if(!!error)
+	throw new ReferenceError("Do not forget to create your .env file");
 
 module.exports = api => {
     api.cache(!dev);

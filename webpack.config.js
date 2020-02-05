@@ -4,7 +4,10 @@
 const webpack = require("webpack");
 const { resolve } = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const envLoaded = require("dotenv").config();
+const { error } = require("dotenv").config();
+
+if(!!error)
+	throw new ReferenceError("Do not forget to create your .env file");
 
 const mode = process.env.NODE_ENV || "production";
 const dev = (mode === "development");
