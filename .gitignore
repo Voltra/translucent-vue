@@ -10,6 +10,7 @@ logs/
 *.log
 
 # Protected files
+dist/
 tmp/
 temp/
 .env
