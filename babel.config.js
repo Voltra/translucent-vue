@@ -15,7 +15,6 @@ module.exports = api => {
             }]
         ],
         plugins: [
-            "babel-plugin-transform-function-bind", // ::this.method
         ],
     };
 };
