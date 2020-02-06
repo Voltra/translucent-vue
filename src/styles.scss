@@ -4,6 +4,17 @@ $borderRadius: 10px !default;
 $transitionDuration: 0.4s !default;
 $transitionFn: ease !default;
 
+$useHeight: true !default;
+$useWrapperStyles: true !default;
+
+@if($useWrapperStyles){
+	.translucent__wrapper{
+		position: relative;
+		width: 90%;
+		height: 90%;
+	}
+}
+
 .tl-card{
 	&-contents-container{
 		border:  $borderColor solid $borderWidth;
@@ -16,5 +27,23 @@ $transitionFn: ease !default;
 		border-radius: $borderRadius;
 		overflow: hidden;
 		position: relative;
+	}
+
+	&-contents{
+		@if($useHeight){
+			height: 100%;
+		}
+	}
+}
+
+.theme{
+	&--white{
+		color: black;
+	}
+
+	&--translucent,
+	&--black,
+	&--grey{
+		color: white;
 	}
 }

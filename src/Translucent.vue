@@ -1,5 +1,5 @@
 <template>
-	<component :is="tag" class="translucent__wrapper" ref="wrapper">
+	<component :is="tag" :class="className" ref="wrapper">
 		<slot/>
 	</component>
 </template>
@@ -14,15 +14,20 @@
 			container: VueTypes.instanceOf(HTMLElement).isRequired,
             tag: VueTypes.string.def("div"),
 
-            filter: VueTypes.integer.def(10),
-            mode: VueTypes.string.def("white"),
+            blur: VueTypes.integer.def(10),
+            theme: VueTypes.string.def("white"),
             shadow: VueTypes.bool.def(true),
-        },
+		},
+		computed: {
+			className(){
+				return `translucent__wrapper theme--${this.theme}`;
+			}
+		},
         mounted(){
             this.$translucent = new Translucent(this.$refs.wrapper, {
                 bgElement: this.container,
-                filterValue: this.filter,
-                cardColor: this.mode,
+                filterValue: this.blur,
+                cardColor: this.theme,
                 shadow: this.shadow,
             });
         },
