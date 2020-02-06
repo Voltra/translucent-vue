@@ -21,7 +21,9 @@
 	],
 	"scripts": {
 		"build": "webpack --colors",
-		"watch": "webpack --colors --watch"
+		"watch": "webpack --colors --watch",
+		"build:docs": "vuepress build ./docs-src",
+		"watch:docs": "vuepress dev ./docs-src"
 	},
 	"dependencies": {
 		"translucent": "^1.0.12",
@@ -41,6 +43,7 @@
 		"vue-loader": "^15.8.3",
 		"vue-style-loader": "^4.1.2",
 		"vue-template-compiler": "^2.6.11",
+		"vuepress-plugin-clean-urls": "^1.1.1",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10"
 	}
