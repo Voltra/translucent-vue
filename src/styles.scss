@@ -6,6 +6,9 @@ $transitionFn: ease !default;
 
 $useHeight: true !default;
 $useWrapperStyles: true !default;
+$useTextShadow: true !default;
+
+$textShadow: 0 0 2px rgba(#000, 0.85) !default;
 
 @if($useWrapperStyles){
 	.translucent__wrapper{
@@ -39,11 +42,18 @@ $useWrapperStyles: true !default;
 .theme{
 	&--white{
 		color: black;
+		@if($useTextShadow){
+			text-shadow: $textShadow;
+		}
+
 	}
 
 	&--translucent,
 	&--black,
 	&--grey{
 		color: white;
+		@if($useTextShadow){
+			text-shadow: $textShadow;
+		}
 	}
 }
