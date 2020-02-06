@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Demo</title>
+
+		<link rel="stylesheet" href="./reset.css"/>
+		<link rel="stylesheet" href="../dist/index.css"/>
+		<link rel="stylesheet" href="./main.css"/>
+
+		<script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+		<script defer src="../dist/index.bundle.js"></script>
+		<script defer src="./index.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="translucent" ref="cont">
+				<translucent theme="grey" :container="$refs.cont">
+					<div class="translucent__content">
+						1-2-3-4
+					</div>
+				</translucent>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,10 +1,13 @@
+//TODO: Add css extract
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //// IMPORTS
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+const { error } = require("dotenv").config();
 const webpack = require("webpack");
 const { resolve } = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const { error } = require("dotenv").config();
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 if(!!error)
 	throw new ReferenceError("Do not forget to create your .env file");
@@ -30,7 +33,7 @@ const config = {
 };
 
 const path = src => resolve(__dirname, src);
-const styleLoaders = ["style-loader", "css-loader"];
+const styleLoaders = [MiniCssExtractPlugin.loader/* , "style-loader" */, "css-loader"];
 const sassLoaders = [...styleLoaders, "sass-loader"];
 const libraries = /(node_module|bower_component)s/gi;
 
@@ -95,17 +98,17 @@ config.module.rules.push({
     use: sassLoaders
 });
 
-const vueStyleLoaders = `vue-style-loader${sassLoaders.map(e=>`!${e}`).join("")}`;
+// const vueStyleLoaders = `vue-style-loader${sassLoaders.map(e=>`!${e}`).join("")}`;
 config.module.rules.push({
     test: /\.vue$/i,
     loader: "vue-loader",
-    options: {
+    /* options: {
         loaders: {
             css: vueStyleLoaders,
             scss: vueStyleLoaders,
             sass: vueStyleLoaders,
         }
-    }
+    } */
 });
 
 
@@ -113,6 +116,7 @@ config.module.rules.push({
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //// PLUGINS
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+config.plugins.push(new MiniCssExtractPlugin());
 config.plugins.push(new VueLoaderPlugin());
 
 

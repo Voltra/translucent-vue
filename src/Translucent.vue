@@ -1,9 +1,7 @@
 <template>
-    <component :is="bgTag" :class="bgClass">
-        <component :is="wrapperTag" :class="wrapperClass" :ref="wrapper">
-            <slot/>
-        </component>
-    </component>
+	<component :is="tag" :class="className" ref="wrapper">
+		<slot/>
+	</component>
 </template>
 
 <script>
@@ -13,20 +11,23 @@
     export default {
         name: "translucent",
         props: {
-            bgClass: VueTypes.string.def("translucent"),
-            wrapperClass: VueTypes.string.def("translucent__wrapper"),
-            bgTag: VueTypes.string.def("div"),
-            wrapperTag: VueTypes.string.def("div"),
+			container: VueTypes.instanceOf(HTMLElement).isRequired,
+            tag: VueTypes.string.def("div"),
 
-            filterValue: VueTypes.integer.def(10),
-            cardColor: VueTypes.string.def("white"),
+            blur: VueTypes.integer.def(10),
+            theme: VueTypes.string.def("white"),
             shadow: VueTypes.bool.def(true),
-        },
+		},
+		computed: {
+			className(){
+				return `translucent__wrapper theme--${this.theme}`;
+			}
+		},
         mounted(){
             this.$translucent = new Translucent(this.$refs.wrapper, {
-                bgElement: `.${this.bgClass}`,
-                filterValue: this.filterValue,
-                cardColor: this.cardColor,
+                bgElement: this.container,
+                filterValue: this.blur,
+                cardColor: this.theme,
                 shadow: this.shadow,
             });
         },
@@ -35,6 +36,3 @@
         },
     }
 </script>
-
-<style lang="scss" scoped>
-</style>

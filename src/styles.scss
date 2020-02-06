@@ -1,0 +1,60 @@
+$borderColor: rgba(200,200,200,0.5) !default;
+$borderWidth: 1px !default;
+$borderRadius: 10px !default;
+$transitionDuration: 0.4s !default;
+$transitionFn: ease !default;
+
+$useHeight: true !default;
+$useWrapperStyles: true !default;
+$useTextShadow: true !default;
+
+$textShadow: 0 0 2px rgba(#000, 0.85) !default;
+
+@if($useWrapperStyles){
+	.translucent__wrapper{
+		position: relative;
+		width: 90%;
+		height: 90%;
+	}
+}
+
+.tl-card{
+	&-contents-container{
+		border:  $borderColor solid $borderWidth;
+		transition: box-shadow $transitionDuration $transitionFn;
+	}
+
+	&-contents-container,
+	&-contents,
+	&-bg-container{
+		border-radius: $borderRadius;
+		overflow: hidden;
+		position: relative;
+	}
+
+	&-contents{
+		@if($useHeight){
+			height: 100%;
+		}
+	}
+}
+
+@mixin theme($color, $shadow: $textShadow, $useShadow: $useTextShadow){
+	color: $color;
+	@if($useShadow){
+		text-shadow: $shadow;
+	}
+}
+
+.theme{
+	&--white{
+		@include theme(black);
+
+	}
+
+	&--translucent,
+	&--black,
+	&--grey{
+		@include theme(white);
+	}
+}

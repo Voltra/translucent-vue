@@ -1,0 +1,33 @@
+*{
+	box-sizing: border-box;
+}
+
+.translucent{
+	background-image: url("./bg.jpg");
+
+	width: 90vw;
+	height: 90vh;
+
+	margin: 5vh 5vw;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.translucent__content{
+	color: inherit;
+	text-shadow: 0 0 2px rgba(0,0,0, 0.85);
+}
+
+.tl-card-contents{
+	/* height: 100%; */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tl-card-contents-container{
+	border: none !important;
+}
