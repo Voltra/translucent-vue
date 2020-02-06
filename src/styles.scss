@@ -39,21 +39,22 @@ $textShadow: 0 0 2px rgba(#000, 0.85) !default;
 	}
 }
 
+@mixin theme($color, $shadow: $textShadow, $useShadow: $useTextShadow){
+	color: $color;
+	@if($useShadow){
+		text-shadow: $shadow;
+	}
+}
+
 .theme{
 	&--white{
-		color: black;
-		@if($useTextShadow){
-			text-shadow: $textShadow;
-		}
+		@include theme(black);
 
 	}
 
 	&--translucent,
 	&--black,
 	&--grey{
-		color: white;
-		@if($useTextShadow){
-			text-shadow: $textShadow;
-		}
+		@include theme(white);
 	}
 }
