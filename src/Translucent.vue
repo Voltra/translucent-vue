@@ -1,9 +1,7 @@
 <template>
-    <component :is="bgTag" :class="bgClass" ref="bg">
-        <component :is="wrapperTag" :class="wrapperClass" ref="wrapper">
-            <slot/>
-        </component>
-    </component>
+	<component :is="tag" class="translucent__wrapper" ref="wrapper">
+		<slot/>
+	</component>
 </template>
 
 <script>
@@ -13,20 +11,18 @@
     export default {
         name: "translucent",
         props: {
-            bgClass: VueTypes.string.def("translucent"),
-            wrapperClass: VueTypes.string.def("translucent__wrapper"),
-            bgTag: VueTypes.string.def("div"),
-            wrapperTag: VueTypes.string.def("div"),
+			container: VueTypes.instanceOf(HTMLElement).isRequired,
+            tag: VueTypes.string.def("div"),
 
-            filterValue: VueTypes.integer.def(10),
-            cardColor: VueTypes.string.def("white"),
+            filter: VueTypes.integer.def(10),
+            bg: VueTypes.string.def("white"),
             shadow: VueTypes.bool.def(true),
         },
         mounted(){
             this.$translucent = new Translucent(this.$refs.wrapper, {
-                bgElement: this.$refs.bg,
-                filterValue: this.filterValue,
-                cardColor: this.cardColor,
+                bgElement: this.container,
+                filterValue: this.filter,
+                cardColor: this.bg,
                 shadow: this.shadow,
             });
         },

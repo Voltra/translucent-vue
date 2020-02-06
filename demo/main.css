@@ -1,0 +1,30 @@
+*{
+	box-sizing: border-box;
+}
+
+.translucent{
+	background-image: url("./bg.jpg");
+
+	width: 90vw;
+	height: 90vh;
+
+	margin: 5vh 5vw;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.translucent__wrapper{
+	position: relative;
+	width: 90%;
+	height: 90%;
+}
+
+.tl-card-contents{
+	height: 100%;
+}
+
+.tl-card-contents-container{
+	border: none !important;
+}
