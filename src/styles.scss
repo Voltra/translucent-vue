@@ -1,0 +1,20 @@
+$borderColor: rgba(200,200,200,0.5) !default;
+$borderWidth: 1px !default;
+$borderRadius: 10px !default;
+$transitionDuration: 0.4s !default;
+$transitionFn: ease !default;
+
+.tl-card{
+	&-contents-container{
+		border:  $borderColor solid $borderWidth;
+		transition: box-shadow $transitionDuration $transitionFn;
+	}
+
+	&-contents-container,
+	&-contents,
+	&-bg-container{
+		border-radius: $borderRadius;
+		overflow: hidden;
+		position: relative;
+	}
+}

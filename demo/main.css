@@ -21,8 +21,16 @@
 	height: 90%;
 }
 
+.translucent__content{
+	color: white;
+}
+
 .tl-card-contents{
 	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .tl-card-contents-container{

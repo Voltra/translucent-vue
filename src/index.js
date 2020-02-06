@@ -1,5 +1,5 @@
 import Translucent from "./Translucent"
-import "translucent/src/translucent.style.css"
+import "./styles"
 
 const Plugin = {
     install(Vue){

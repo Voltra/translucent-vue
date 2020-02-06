@@ -15,14 +15,14 @@
             tag: VueTypes.string.def("div"),
 
             filter: VueTypes.integer.def(10),
-            bg: VueTypes.string.def("white"),
+            mode: VueTypes.string.def("white"),
             shadow: VueTypes.bool.def(true),
         },
         mounted(){
             this.$translucent = new Translucent(this.$refs.wrapper, {
                 bgElement: this.container,
                 filterValue: this.filter,
-                cardColor: this.bg,
+                cardColor: this.mode,
                 shadow: this.shadow,
             });
         },
@@ -31,6 +31,3 @@
         },
     }
 </script>
-
-<style lang="scss" scoped>
-</style>
