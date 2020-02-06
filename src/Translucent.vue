@@ -1,6 +1,6 @@
 <template>
-    <component :is="bgTag" :class="bgClass">
-        <component :is="wrapperTag" :class="wrapperClass" :ref="wrapper">
+    <component :is="bgTag" :class="bgClass" ref="bg">
+        <component :is="wrapperTag" :class="wrapperClass" ref="wrapper">
             <slot/>
         </component>
     </component>
@@ -24,7 +24,7 @@
         },
         mounted(){
             this.$translucent = new Translucent(this.$refs.wrapper, {
-                bgElement: `.${this.bgClass}`,
+                bgElement: this.$refs.bg,
                 filterValue: this.filterValue,
                 cardColor: this.cardColor,
                 shadow: this.shadow,
