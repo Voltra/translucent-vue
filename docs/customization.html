@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Customization</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.c585c77b.css" as="style"><link rel="preload" href="/assets/js/app.a4acd6d1.js" as="script"><link rel="preload" href="/assets/js/2.2d169b48.js" as="script"><link rel="preload" href="/assets/js/7.ece2824d.js" as="script"><link rel="prefetch" href="/assets/js/3.d405b236.js"><link rel="prefetch" href="/assets/js/4.02a2c1aa.js"><link rel="prefetch" href="/assets/js/5.ca18493f.js"><link rel="prefetch" href="/assets/js/6.b3608dae.js"><link rel="prefetch" href="/assets/js/8.0bd6f641.js"><link rel="prefetch" href="/assets/js/9.7d64c864.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c585c77b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Guide</a></li><li><a href="/exports.html" class="sidebar-link">Exports</a></li><li><a href="/component.html" class="sidebar-link">Component</a></li><li><a href="/customization.html" class="active sidebar-link">Customization</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/customization.html#base-styles" class="sidebar-link">Base styles</a></li><li class="sidebar-sub-header"><a href="/customization.html#theming" class="sidebar-link">Theming</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="customization"><a href="#customization" class="header-anchor">#</a> Customization</h1> <h2 id="base-styles"><a href="#base-styles" class="header-anchor">#</a> Base styles</h2> <p>You can choose to either use the pre-compiled CSS (located as <code>dist/index.css</code>) or import the SCSS module :</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@import</span> <span class="token string">&quot;~translucent-vue/src/styles&quot;</span><span class="token punctuation">;</span> <span class="token comment">// classic import</span>
+
+<span class="token comment">// OR</span>
+
+@use <span class="token string">&quot;~translucent-vue/src/styles&quot;</span> as tv<span class="token punctuation">;</span> <span class="token comment">// scss modules syntax</span>
+</code></pre></div><p>Here are the variables you can override (import) or customize (module) :</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$borderColor</span></span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>200<span class="token punctuation">,</span>200<span class="token punctuation">,</span>200<span class="token punctuation">,</span>0.5<span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$borderWidth</span></span><span class="token punctuation">:</span> 1px <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$borderRadius</span></span><span class="token punctuation">:</span> 10px <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$transitionDuration</span></span><span class="token punctuation">:</span> 0.4s <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$transitionFn</span></span><span class="token punctuation">:</span> ease <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$useHeight</span></span><span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span> <span class="token comment">// whether or not it should fix the height to 100%</span>
+<span class="token property"><span class="token variable">$useWrapperStyles</span></span><span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span> <span class="token comment">// whether or not it should add default styles to the wrapper</span>
+<span class="token property"><span class="token variable">$useTextShadow</span></span><span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span> <span class="token comment">// whether or not the text should have a shadow</span>
+<span class="token property"><span class="token variable">$textShadow</span></span><span class="token punctuation">:</span> 0 0 2px <span class="token function">rgba</span><span class="token punctuation">(</span>#000<span class="token punctuation">,</span> 0.85<span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>The new module syntax allows a more fine-grained control over external resources :</p> <div class="language-scss extra-class"><pre class="language-scss"><code>@use <span class="token string">&quot;~translucent-vue/src/styles&quot;</span> as tv <span class="token function">with</span><span class="token punctuation">(</span>
+    <span class="token property"><span class="token variable">$borderColor</span></span><span class="token punctuation">:</span> black<span class="token punctuation">,</span>
+    <span class="token property"><span class="token variable">$borderWidth</span></span><span class="token punctuation">:</span> 3px
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token selector">.my-class</span><span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> tv.<span class="token variable">$borderColor</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <h2 id="theming"><a href="#theming" class="header-anchor">#</a> Theming</h2> <p>As <code>translucent</code> indicates, you can use your own themes in addition to the default provided ones, that being said, <code>translucent-vue</code> gives you a minimal set of tools to ease your job at writing themes :</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@mixin</span> <span class="token function">theme</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$shadow</span></span><span class="token punctuation">:</span> <span class="token variable">$textShadow</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$useShadow</span></span><span class="token punctuation">:</span> <span class="token variable">$useTextShadow</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// used to define a theme</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.theme</span><span class="token punctuation">{</span> <span class="token comment">// for instance it is used for the default themes</span>
+	<span class="token selector"><span class="token parent important">&amp;</span>--white</span><span class="token punctuation">{</span>
+		<span class="token keyword">@include</span> <span class="token function">theme</span><span class="token punctuation">(</span>black<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token selector"><span class="token parent important">&amp;</span>--translucent,
+	<span class="token parent important">&amp;</span>--black,
+	<span class="token parent important">&amp;</span>--grey</span><span class="token punctuation">{</span>
+		<span class="token keyword">@include</span> <span class="token function">theme</span><span class="token punctuation">(</span>white<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/component.html" class="prev">Component</a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a4acd6d1.js" defer></script><script src="/assets/js/2.2d169b48.js" defer></script><script src="/assets/js/7.ece2824d.js" defer></script>
+  </body>
+</html>

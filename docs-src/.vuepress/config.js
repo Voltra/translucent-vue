@@ -8,6 +8,9 @@ module.exports = {
         ],
         sidebar: [
             '/',
+            '/exports',
+            '/component',
+            '/customization',
             /* {
                 title: "Components",
                 path: "/components",

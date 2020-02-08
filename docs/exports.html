@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exports</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.c585c77b.css" as="style"><link rel="preload" href="/assets/js/app.a4acd6d1.js" as="script"><link rel="preload" href="/assets/js/2.2d169b48.js" as="script"><link rel="preload" href="/assets/js/8.0bd6f641.js" as="script"><link rel="prefetch" href="/assets/js/3.d405b236.js"><link rel="prefetch" href="/assets/js/4.02a2c1aa.js"><link rel="prefetch" href="/assets/js/5.ca18493f.js"><link rel="prefetch" href="/assets/js/6.b3608dae.js"><link rel="prefetch" href="/assets/js/7.ece2824d.js"><link rel="prefetch" href="/assets/js/9.7d64c864.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c585c77b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Guide</a></li><li><a href="/exports.html" class="active sidebar-link">Exports</a></li><li><a href="/component.html" class="sidebar-link">Component</a></li><li><a href="/customization.html" class="sidebar-link">Customization</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="exports"><a href="#exports" class="header-anchor">#</a> Exports</h1> <p>If you are using a module system, the library exposes :</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin<span class="token punctuation">,</span> Translucent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;translucent-vue&quot;</span>
+</code></pre></div><p>If you are using it directly from the browser, then the library is exposed as the <code>TranslucentVue</code> global variable.</p> <p>You can start using the plugin :</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin<span class="token operator">:</span> TranslucentVue <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;translucent-vue&quot;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>TranslucentVue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>This will register the component globally, if you want to limit the scope of the use of the component, you will need to import it individually in your components :</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Translucent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;translucent-vue&quot;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token comment">// [...]</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+        Translucent<span class="token punctuation">,</span>
+        <span class="token comment">// [...]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// [...]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/" class="prev router-link-active">Guide</a></span> <span class="next"><a href="/component.html">Component</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a4acd6d1.js" defer></script><script src="/assets/js/2.2d169b48.js" defer></script><script src="/assets/js/8.0bd6f641.js" defer></script>
+  </body>
+</html>
