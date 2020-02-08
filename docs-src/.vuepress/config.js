@@ -1,5 +1,5 @@
 module.exports = {
-    // base: "/translucent-vue/",
+    base: "/translucent-vue/",
     dest: "./docs",
     themeConfig: {
         smoothScroll: true,
